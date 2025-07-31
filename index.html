@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 2 — Complete the sentences (15 items)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 20px auto;
+      max-width: 920px;
+      color: #222;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 16px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .instructions {
+      font-style: italic;
+      text-align: center;
+      margin-bottom: 25px;
+      color: #444;
+      user-select: none;
+    }
+    .word-list {
+      background: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      line-height: 1.4;
+      user-select: none;
+    }
+    .word-list strong {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    ol {
+      padding-left: 20px;
+      counter-reset: item;
+    }
+    li {
+      margin-bottom: 22px;
+      font-size: 1.1rem;
+      line-height: 1.35;
+      list-style: none;
+    }
+    li:before {
+      counter-increment: item;
+      content: counters(item, ".") ". ";
+      font-weight: 700;
+      color: #007acc;
+      margin-right: 8px;
+    }
+    input[type="text"] {
+      width: 100%;
+      max-width: 400px;
+      font-size: 1rem;
+      padding: 6px 10px;
+      border: 2px solid #bbb;
+      border-radius: 5px;
+      transition: border-color 0.3s ease;
+      vertical-align: middle;
+      box-sizing: border-box;
+      margin-right: 8px;
+    }
+    input[type="text"]:focus {
+      border-color: #007acc;
+      outline: none;
+    }
+    button.check-btn {
+      padding: 7px 18px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #007acc;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      vertical-align: middle;
+      user-select: none;
+    }
+    button.check-btn:hover:not(:disabled) {
+      background-color: #005fa3;
+    }
+    button.check-btn:disabled {
+      background-color: #a2bbd9;
+      cursor: not-allowed;
+    }
+    .result-message {
+      margin-top: 8px;
+      font-weight: 700;
+      user-select: none;
+      min-height: 24px;
+    }
+    .correct {
+      color: #155724;
+      background-color: #d4edda;
+      border: 1.5px solid #c3e6cb;
+      padding: 6px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 4px;
+    }
+    .incorrect {
+      color: #721c24;
+      background-color: #f8d7da;
+      border: 1.5px solid #f5c6cb;
+      padding: 6px 10px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 4px;
+    }
+    .correct-answer {
+      margin-top: 4px;
+      font-size: 0.95rem;
+      color: #155724;
+      font-weight: 600;
+      font-style: italic;
+    }
+    @media (max-width: 450px) {
+      input[type="text"] {
+        max-width: 100%;
+        margin-bottom: 8px;
+        display: block;
+      }
+      button.check-btn {
+        display: block;
+        margin-top: 4px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h2>Exercise 2<br>Complete the sentences with the correct form of the words from the word list below 👇</h2>
+
+<div class="word-list" aria-label="Word list">
+  <strong>Word list:</strong>
+  cultivate a deep empathy; cultivate a strong commitment to moral responsibility; exhibit a mix of vulnerability and determination; maintain loyalty to someone; be insecure; be confident; be thoughtful; embody intellectual rigor and conscientiousness; be highly disciplined; alleviate one’s insecurities; balance logic with compassion; show a strong commitment to fairness and integrity; emotional maturity; demonstrate unwavering loyalty to someone; embody emotional sincerity; struggle with insecurity and self-doubt; struggle with a sense of inferiority; show emotional growth and develop maturity over time; have a multifaceted character; demonstrate prudence; reflect compassion and pragmatism; show patience; have a profound sense of responsibility; value love and forgiveness; experience internal conflict; experience emotional ambivalence; outward demeanor; inner life; stern; intimidating; feel regret; redemption; represent the complexity of human motivations; showcase the tension between self-interest and duty
+</div>
+
+<ol>
+  <li>
+    Hermione <input type="text" id="q1" aria-label="Answer for sentence 1" autocomplete="off">
+    in all her studies, always showing great discipline and responsibility.
+    <button type="button" class="check-btn" data-q="q1">Check</button>
+    <div class="result-message" id="result-q1" aria-live="polite"></div>
+  </li>
+  <li>
+    Ron sometimes <input type="text" id="q2" aria-label="Answer for sentence 2" autocomplete="off">
+    when he compares himself to his more successful siblings.
+    <button type="button" class="check-btn" data-q="q2">Check</button>
+    <div class="result-message" id="result-q2" aria-live="polite"></div>
+  </li>
+  <li>
+    Dumbledore consistently <input type="text" id="q3" aria-label="Answer for sentence 3" autocomplete="off">
+    when making important decisions affecting others.
+    <button type="button" class="check-btn" data-q="q3">Check</button>
+    <div class="result-message" id="result-q3" aria-live="polite"></div>
+  </li>
+  <li>
+    Severus Snape <input type="text" id="q4" aria-label="Answer for sentence 4" autocomplete="off">
+    because of his conflicting emotions and difficult past.
+    <button type="button" class="check-btn" data-q="q4">Check</button>
+    <div class="result-message" id="result-q4" aria-live="polite"></div>
+  </li>
+  <li>
+    Harry’s journey shows how he grew from <input type="text" id="q5" aria-label="Answer for sentence 5" autocomplete="off">
+    to someone who leads confidently and thoughtfully.
+    <button type="button" class="check-btn" data-q="q5">Check</button>
+    <div class="result-message" id="result-q5" aria-live="polite"></div>
+  </li>
+  <li>
+    Hermione is able <input type="text" id="q6" aria-label="Answer for sentence 6" autocomplete="off">
+    by considering facts and feelings equally in her decisions.
+    <button type="button" class="check-btn" data-q="q6">Check</button>
+    <div class="result-message" id="result-q6" aria-live="polite"></div>
+  </li>
+  <li>
+    Ron’s maturity is clear as he continues <input type="text" id="q7" aria-label="Answer for sentence 7" autocomplete="off">
+    over time.
+    <button type="button" class="check-btn" data-q="q7">Check</button>
+    <div class="result-message" id="result-q7" aria-live="polite"></div>
+  </li>
+  <li>
+    Harry often <input type="text" id="q8" aria-label="Answer for sentence 8" autocomplete="off">
+    , combining his emotional sensitivity with firm resolve.
+    <button type="button" class="check-btn" data-q="q8">Check</button>
+    <div class="result-message" id="result-q8" aria-live="polite"></div>
+  </li>
+  <li>
+    Dumbledore <input type="text" id="q9" aria-label="Answer for sentence 9" autocomplete="off">
+    for the welfare of all Hogwarts students.
+    <button type="button" class="check-btn" data-q="q9">Check</button>
+    <div class="result-message" id="result-q9" aria-live="polite"></div>
+  </li>
+  <li>
+    Snape’s <input type="text" id="q10" aria-label="Answer for sentence 10" autocomplete="off">
+    can appear harsh, but it hides a deep and complex inner life.
+    <button type="button" class="check-btn" data-q="q10">Check</button>
+    <div class="result-message" id="result-q10" aria-live="polite"></div>
+  </li>
+  <li>
+    Hermione’s efforts help her <input type="text" id="q11" aria-label="Answer for sentence 11" autocomplete="off">
+    as a Muggle-born witch within the wizarding world.
+    <button type="button" class="check-btn" data-q="q11">Check</button>
+    <div class="result-message" id="result-q11" aria-live="polite"></div>
+  </li>
+  <li>
+    Harry tries hard to <input type="text" id="q12" aria-label="Answer for sentence 12" autocomplete="off">
+    to his friends and mentors through thick and thin.
+    <button type="button" class="check-btn" data-q="q12">Check</button>
+    <div class="result-message" id="result-q12" aria-live="polite"></div>
+  </li>
+  <li>
+    Ron sometimes feels <input type="text" id="q13" aria-label="Answer for sentence 13" autocomplete="off">
+    about his place within his family and the wizarding world.
+    <button type="button" class="check-btn" data-q="q13">Check</button>
+    <div class="result-message" id="result-q13" aria-live="polite"></div>
+  </li>
+  <li>
+    Dumbledore <input type="text" id="q14" aria-label="Answer for sentence 14" autocomplete="off">
+    and forgiveness as key values in his leadership style.
+    <button type="button" class="check-btn" data-q="q14">Check</button>
+    <div class="result-message" id="result-q14" aria-live="polite"></div>
+  </li>
+  <li>
+    Snape’s character <input type="text" id="q15" aria-label="Answer for sentence 15" autocomplete="off">.
+    <button type="button" class="check-btn" data-q="q15">Check</button>
+    <div class="result-message" id="result-q15" aria-live="polite"></div>
+  </li>
+</ol>
+
+<script>
+  (function(){
+    const answers = {
+      q1: 'embodies intellectual rigor and conscientiousness',
+      q2: 'struggles with insecurity and self-doubt',
+      q3: 'demonstrates prudence',
+      q4: 'experiences internal conflict',
+      q5: 'insecure',
+      q6: 'to balance logic with compassion',
+      q7: 'to show emotional growth and develop maturity over time',
+      q8: 'exhibits a mix of vulnerability and determination',
+      q9: 'has a profound sense of responsibility',
+      q10: 'outward demeanor',
+      q11: 'alleviate her insecurities',
+      q12: 'maintain loyalty',
+      q13: 'insecure',
+      q14: 'values love and forgiveness',
+      q15: ['represents the complexity of human motivations', 'showcases the tension between self-interest and duty']
+    };
+
+    function normalize(str) {
+      return str.trim().toLowerCase().replace(/\s+/g, ' ');
+    }
+
+    document.querySelectorAll('button.check-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const qid = button.getAttribute('data-q');
+        const input = document.getElementById(qid);
+        const userValRaw = input.value;
+        const userVal = normalize(userValRaw);
+        const resultDiv = document.getElementById('result-' + qid);
+        let correctAnswer = answers[qid];
+
+        if (!userVal) {
+          // Показываем правильный ответ, если поле пустое
+          if (Array.isArray(correctAnswer)) {
+            correctAnswer = correctAnswer.join(' / ');
+          }
+          resultDiv.innerHTML = `<div class="correct-answer"><strong>Correct answer:</strong> ${correctAnswer}</div>`;
+          input.style.borderColor = '#28a745';
+          return;
+        }
+
+        if (Array.isArray(correctAnswer)) {
+          // q15: проверяем совпадение с одним из вариантов
+          const isCorrect = correctAnswer.some(ans => normalize(ans) === userVal);
+          if (isCorrect) {
+            resultDiv.innerHTML = `<span class="correct">Correct! ✔️</span>`;
+            input.style.borderColor = '#28a745';
+          } else {
+            resultDiv.innerHTML = `<span class="incorrect">Incorrect ❌. Try again or check the correct answer below.</span>
+            <div class="correct-answer"><strong>Correct answer:</strong> ${correctAnswer.join(' / ')}</div>`;
+            input.style.borderColor = '#dc3545';
+          }
+        } else {
+          if (normalize(correctAnswer) === userVal) {
+            resultDiv.innerHTML = `<span class="correct">Correct! ✔️</span>`;
+            input.style.borderColor = '#28a745';
+          } else {
+            resultDiv.innerHTML = `<span class="incorrect">Incorrect ❌. Try again or check the correct answer below.</span>
+            <div class="correct-answer"><strong>Correct answer:</strong> ${correctAnswer}</div>`;
+            input.style.borderColor = '#dc3545';
+          }
+        }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
